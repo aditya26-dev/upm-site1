@@ -4,22 +4,28 @@ from django.utils import timezone
 
 # Create your models here.
 
+class listProdi(models.Model):
+    nama_prodi = models.CharField(default='', max_length=256)
+
+    def __str__(self):
+        return '{}'.format(self.nama_prodi)
+
+class baseFolder(models.Model):
+    nama_baseFolder = models.CharField(default='', max_length=256)
+    prodi_name = models.ForeignKey(listProdi, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return '{}'.format(self.nama_baseFolder)
+
 class baruFolder(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     nama_folder = models.CharField(default='', max_length=256)
     desc_folder = models.TextField(default='', max_length=256)
+    baseFolder_nama = models.ForeignKey(baseFolder, on_delete=models.CASCADE)
+    prodi_name = models.ForeignKey(listProdi, on_delete=models.CASCADE)
 
     def __str__(self):
         return '{}'.format(self.nama_folder)
-
-class InformasiFile(models.Model):
-    created_on = models.DateTimeField(auto_now_add=True)
-    nama_file = models.CharField(default='', max_length=256)
-    desc_file = models.TextField()
-    link_file = models.CharField(default='', max_length=256)
-
-    def __str__(self):
-        return '{}'.format(self.nama_file)
     
 class baruFile(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)

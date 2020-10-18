@@ -15,7 +15,7 @@
   </head>
   <body style="background-image: url({% static 'media/sample-image.jpg' %});">
     <section class="box-style">
-    <form class="mx-5" action="{% url 'homepage' %}">
+    <form class="mx-5" method="POST">
         {% csrf_token %}
         <img class="title-logo" src="{% static 'media/logo-prasmul.png' %}" alt="">
         <div class="form-group">

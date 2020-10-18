@@ -27,9 +27,10 @@ class UserAdmin(BaseUserAdmin):
     ordering = ('-created_on',)
 
 
-admin.site.site_header = "DASHBOARD BENIH BELAJAR"
+admin.site.site_header = "DASHBOARD UPM"
 admin.site.register(models.CustomUser, UserAdmin)
-admin.site.register(models.InformasiFile)
+admin.site.register(models.listProdi)
+admin.site.register(models.baseFolder)
 admin.site.register(models.baruFolder)
 admin.site.register(models.baruFile)
 

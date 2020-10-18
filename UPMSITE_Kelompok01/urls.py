@@ -19,7 +19,10 @@ from home import views as homeViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/',homeViews.login, name = "login"),
-    path('homepage/',homeViews.card1, name = "homepage"),
+    path('login/',homeViews.page_login, name = "login"),
+    path('homepage/',homeViews.homepage, name = "homepage"),
     path('listfile/',homeViews.list1, name = "listfile"),
+    path('editform/',homeViews.dashboardForm, name="editform"),
+    path('dashFolder/',homeViews.dashboardFolder, name="dashFolder"),
+    path('dashFile/',homeViews.dashboardFile, name="dashFile"),   
 ]
