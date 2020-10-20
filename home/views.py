@@ -47,14 +47,19 @@ def dashboardForm(request):
         'form': form,
     }
 
-    if form.is_valid(): 
-        form.save() 
-
     if request.method == 'POST':
-        post = request.POST
-        nama_file = post['nama_file']
-        desc_file = post['desc_file']
-        link_file = post['link_file']
+            post = request.POST
+            nama_file = post['nama_file']
+            desc_file = post['desc_file']
+            link_file = post['link_file']
+            nama_folder = post['nama_folder']
+            new_file = models.baruFile(
+                nama_file = nama_file,
+                desc_file = desc_file,
+                link_file = link_file,
+                nama_folder = nama_folder
+            )
+            new_file.save()
 
     return render(request, 'editForm.html', context)
 
