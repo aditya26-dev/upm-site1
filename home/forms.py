@@ -27,3 +27,18 @@ class inputFileInfo(forms.ModelForm):
             'nama_folder' : forms.Select(attrs=('class': 'form-control'))
         }
         '''
+
+class inputFolderInfo(forms.ModelForm):
+    class Meta:
+        model = models.baruFolder
+        fields = {'nama_folder', 'desc_folder', 'baseFolder_nama', 'prodi_name'}
+
+        '''
+        widgets = {
+            'nama_folder' : forms.CharField(attrs={'class': 'input', 'placeholder' : 'fileName'}),
+            'desc_folder' : forms.CharField(attrs={'class': 'input', 'placeholder' : 'you@email.com'}),
+            'prodi_name' : forms.Select(attrs=('class': 'form-control'))
+            'baseFolder_nama' : forms.Select(attrs=('class': 'form-control'))
+
+        }
+        '''

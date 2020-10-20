@@ -72,13 +72,13 @@
                       <p class="card-text my-3">{{item.desc_file}}</p>
                     </div>
                     <a class="btn btn-success my-3 mx-4" href="{{item.link_file}}" style="width: 15rem;" href="#" role="button">Lihat Detail</a>
-                    <a class="btn btn-primary my-2 mx-4" href=href="{% url 'updateform' nama_file='nama_file' desc_file='desc_file' link_file='link_file' nama_folder='nama_folder' %}" style="width: 15rem;" href="#" role="button">Update</a>
-                    <a class="btn btn-danger my-2 mx-4" href=href="{% url 'updateform' nama_file='nama_file' desc_file='desc_file' link_file='link_file' nama_folder='nama_folder' %}" style="width: 15rem;" href="#" role="button">Delete</a>
+                    <a class="btn btn-primary my-2 mx-4" href="{% url 'update' id=item.id %}" style="width: 15rem;" href="#" role="button">Update</a>
+                    <a class="btn btn-danger my-2 mx-4" href="{% url 'delete' id=item.id %}" style="width: 15rem;" href="#" role="button">Delete</a>
                   </div>
             </div>
             {% endfor %}
         </div>
-        <a class="btn btn-secondary my-5" href="{% url 'editform' %}" style="width: 99rem; margin-left: -20px; padding-top: -20px" href="#" role="button">Add Folder</a>
+        <a class="btn btn-secondary my-5" href="{% url 'editform' %}" style="width: 99rem; margin-left: -20px; padding-top: -20px" href="#" role="button">Add File</a>
     </section>
 
     <!-- Optional JavaScript -->
