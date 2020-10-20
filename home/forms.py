@@ -10,7 +10,7 @@ class CustomUserLogin(forms.ModelForm):
         '''
         widgets = {
             'email' : forms.EmailInput(attrs={'class': 'input', 'placeholder' : 'you@email.com'}),
-            'password' : forms.EmailInput(attrs={'class': 'input', 'placeholder' : 'you@email.com'}),
+            'password' : forms.Password(attrs={'class': 'form-control', 'placeholder' : 'you@email.com'}),
         }
         '''
 

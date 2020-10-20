@@ -15,7 +15,7 @@
   <body>
     <section>
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #132F64; height: 100px;">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{% url 'homepage' %}">
                 <img class="title-logo" src="{% static 'media/logo-prasmul.png' %}" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,28 +25,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Informasi Umum
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
+                  <a class="nav-link" href="{% url 'informasiUmum' %}">Informasi Umum <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Akreditasi
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href="{% url 'akreditasiUmum' %}">Umum</a>
+                      <a class="dropdown-item" href="{% url 'akreditasiprodi' %}">Prodi</a>
                     </div>
                   </li>
                   <li class="nav-item dropdown">
@@ -54,10 +41,8 @@
                       Audit
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href="#">Umum</a>
+                      <a class="dropdown-item" href="{% url 'auditprodi' %}">Prodi</a>
                     </div>
                   </li>
               </ul>
@@ -85,7 +70,7 @@
                       <h3>INFORMASI UMUM</h3>
                       <p class="card-text my-3">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
-                    <a class="btn btn-success my-5 mx-4" href="{% url 'listfile' %}" style="width: 15rem;" href="#" role="button">Lihat Detail</a>
+                    <a class="btn btn-success my-5 mx-4" href="{% url 'informasiUmum' %}" style="width: 15rem;" href="#" role="button">Lihat Detail</a>
                   </div>
             </div>
             <div class="column">
@@ -95,7 +80,7 @@
                       <h3>AKREDITASI UMUM</h3>
                       <p class="card-text my-3">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
-                    <a class="btn btn-success my-5 mx-4" href="{% url 'listfile' %}" style="width: 15rem;" href="#" role="button">Lihat Detail</a>
+                    <a class="btn btn-success my-5 mx-4" href="{% url 'akreditasiUmum' %}" style="width: 15rem;" href="#" role="button">Lihat Detail</a>
                   </div>
             </div>
             <div class="column">
@@ -105,7 +90,7 @@
                       <h3>AUDIT UMUM</h3>
                       <p class="card-text my-3">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
-                    <a class="btn btn-success my-5 mx-4" href="{% url 'listfile' %}" style="width: 15rem;" href="#" role="button">Lihat Detail</a>
+                    <a class="btn btn-success my-5 mx-4" href="{% url 'auditumum' %}" style="width: 15rem;" href="#" role="button">Lihat Detail</a>
                   </div>
             </div>
             <div class="column">
@@ -115,7 +100,7 @@
                       <h3>AKREDITASI {{ Prodi }}</h3>
                       <p class="card-text my-3">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
-                    <a class="btn btn-success my-5 mx-4" href="{% url 'listfile' %}" style="width: 15rem;" href="#" role="button">Lihat Detail</a>
+                    <a class="btn btn-success my-5 mx-4" href="{% url 'akreditasiprodi' %}" style="width: 15rem;" href="#" role="button">Lihat Detail</a>
                   </div>
             </div>
             <div class="column">
@@ -125,7 +110,7 @@
                       <h3>AUDIT {{ Prodi }}</h3>
                       <p class="card-text my-3">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
-                    <a class="btn btn-success my-5 mx-4" href="{% url 'listfile' %}" style="width: 15rem;" href="#" role="button">Lihat Detail</a>
+                    <a class="btn btn-success my-5 mx-4" href="{% url 'auditprodi' %}" style="width: 15rem;" href="#" role="button">Lihat Detail</a>
                   </div>
             </div>
     </section>

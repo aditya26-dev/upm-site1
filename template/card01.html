@@ -8,9 +8,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'assets/list.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/card.css' %}">
 
-    <title>List Template</title>
+    <title>Card Template</title>
   </head>
   <body>
 <section>
@@ -62,13 +62,19 @@
     </section>
     
     <section class="mx-5 my-5">
-        <div>
-          {% for item in files %}
-          <h3>{{item.nama_file}}</h3>
-          <p class="card-text my-3">{{item.desc_file}}</p>
-          <a class="btn btn-success my-5 mx-4" href="{{item.link_file}}" style="width: 15rem;" href="#" role="button">Lihat Detail</a>
-          <hr>
-          {% endfor %}
+        <div class="row">
+            {% for item in folder %}
+            <div class="column">
+                <div class="card" style="width: 18rem; height: 35rem;">
+                    <img class="card-img-top" src="{% static 'media/sample-image.jpg' %}" alt="...">
+                    <div class="card-body">
+                      <h3>{{item.nama_folder}}</h3>
+                      <p class="card-text my-3">{{item.desc_folder}}</p>
+                    </div>
+                    <a class="btn btn-success my-5 mx-4" href="{% url 'listfile' %}" style="width: 15rem;" href="#" role="button">Lihat Detail</a>
+                  </div>
+            </div>
+            {% endfor %}
         </div>
     </section>
 

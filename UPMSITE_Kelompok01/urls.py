@@ -24,5 +24,10 @@ urlpatterns = [
     path('listfile/',homeViews.list1, name = "listfile"),
     path('editform/',homeViews.dashboardForm, name="editform"),
     path('dashFolder/',homeViews.dashboardFolder, name="dashFolder"),
-    path('dashFile/',homeViews.dashboardFile, name="dashFile"),   
+    path('dashFile/',homeViews.dashboardFile, name="dashFile"),
+    path('informasiUmum/',homeViews.informasiUmum, name="informasiUmum"),
+    path('akreditasiUmum/',homeViews.akreditasiUmum, name="akreditasiUmum"),
+    path('auditprodi/',homeViews.auditProdi, name="auditprodi"),
+    path('akreditasiprodi/',homeViews.akreditasiProdi, name="akreditasiprodi"),
+    path('auditumum/',homeViews.auditUmum, name="auditumum"),    
 ]
