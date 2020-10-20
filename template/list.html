@@ -62,15 +62,23 @@
     </section>
     
     <section class="mx-5 my-5">
-        <div>
-          {% for item in files %}
-          <h3>{{item.nama_file}}</h3>
-          <p class="card-text my-3">{{item.desc_file}}</p>
-          <a class="btn btn-success my-5 mx-4" href="{{item.link_file}}" style="width: 15rem;" href="#" role="button">Lihat Detail</a>
-          <a class="btn btn-success my-5 mx-4" href="{% url 'updateform' nama_file=nama_file desc_file=desc_file link_file=link_file nama_folder=nama_folder %}" style="width: 15rem;" href="#" role="button">Edit</a>
-          <hr>
-          {% endfor %}
+        <div class="row">
+            {% for item in files %}
+            <div class="column">
+                <div class="card" style="width: 18rem; height: 45rem;">
+                    <img class="card-img-top" src="{% static 'media/sample-image.jpg' %}" alt="...">
+                    <div class="card-body">
+                      <h3>{{item.nama_file}}</h3>
+                      <p class="card-text my-3">{{item.desc_file}}</p>
+                    </div>
+                    <a class="btn btn-success my-3 mx-4" href="{{item.link_file}}" style="width: 15rem;" href="#" role="button">Lihat Detail</a>
+                    <a class="btn btn-primary my-2 mx-4" href=href="{% url 'updateform' nama_file='nama_file' desc_file='desc_file' link_file='link_file' nama_folder='nama_folder' %}" style="width: 15rem;" href="#" role="button">Update</a>
+                    <a class="btn btn-danger my-2 mx-4" href=href="{% url 'updateform' nama_file='nama_file' desc_file='desc_file' link_file='link_file' nama_folder='nama_folder' %}" style="width: 15rem;" href="#" role="button">Delete</a>
+                  </div>
+            </div>
+            {% endfor %}
         </div>
+        <a class="btn btn-secondary my-5" href="{% url 'editform' %}" style="width: 99rem; margin-left: -20px; padding-top: -20px" href="#" role="button">Add Folder</a>
     </section>
 
     <!-- Optional JavaScript -->
