@@ -129,7 +129,8 @@ def akreditasiUmum(request):
 
 def auditUmum(request):
 
-    files = models.baruFile.objects.filter(nama_folder = 0)
+    folder = models.baruFolder.objects.get(nama_folder = 'Audit Umum')
+    files = models.baruFile.objects.filter(nama_folder = folder)
 
     context = {
         'files': files,
@@ -153,3 +154,21 @@ def akreditasiProdi(request):
         'folder': folder,
     }
     return render(request, 'card01.html', context)
+
+def updateFile(request, nama_file, desc_file, link_file, nama_folder):
+
+    form = forms.inputFileInfo()
+    context = {
+        'form' : form,
+    }
+
+    form.nama_file = models.baruFile.objects.get(nama_file = nama_file)
+    form.desc_file = models.baruFile.objects.get(desc_file = desc_file)
+    form.link_file = models.baruFile.objects.get(link_file = link_file)
+    form.nama_folder = models.baruFile.objects.get(nama_folder = nama_folder)
+
+    return render(request, 'editForm.html', context)
+
+def logout_user(request):
+    logout(request)
+    return redirect('homepage')
